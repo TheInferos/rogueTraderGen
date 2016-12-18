@@ -23,6 +23,7 @@ public class Charecter {
     public int Perception;
     public int Willpower;
     public int Fellowship;
+    public int Wounds;
     public String World;
     public  Map<String, Integer> stats;
     
@@ -77,29 +78,40 @@ public class Charecter {
                 Toughness += 5;
                 Willpower -= 5;
                 Fellowship -= 5;
+                Wounds = RougeTraderGen.rollDie(5)+2+2*(getBonus(Toughness));
                 break;
             case "Void Born":
                 Strength -= 5;
                 Willpower += 5;
+                Wounds = RougeTraderGen.rollDie(5)+2*(getBonus(Toughness));
                 break;
             case "Forge World":
                 WeaponSkill -= 5;
                 Intelligence += 5;
+                Wounds = RougeTraderGen.rollDie(5)+1+2*(getBonus(Toughness));
                 break;
             case "Hive World":
                 Toughness -= 5;
                 Fellowship += 5;
+                Wounds = RougeTraderGen.rollDie(5)+ 1+2*(getBonus(Toughness));
                 break;
             case "Imperial World":
                 Willpower += 3;
+                Wounds = RougeTraderGen.rollDie(5)+2*(getBonus(Toughness));
                 break;
             case "Noble Born":
                 Willpower -= 5;
                 Fellowship +=5;
+                Wounds = RougeTraderGen.rollDie(5)+2*(getBonus(Toughness));
                 break;
                     
             default:
                 break;
         }
+    }
+    
+    public int getBonus(int stat)
+    {
+        return stat/10;
     }
 }
