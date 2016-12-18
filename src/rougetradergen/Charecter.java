@@ -24,24 +24,45 @@ public class Charecter {
     public int Fellowship;
     public  Map<String, Integer> stats;
     
-    public Charecter()
+    public Charecter(int[] statline)
     {
-        WeaponSkill = 15;
-        Map<String, Integer> stats = new HashMap<String, Integer>();
+        setStatline(statline);
+        stats = new HashMap<String, Integer>();
         setMap(stats);
-        WeaponSkill = 25;
-        System.out.println(stats.get("WS"));
     }
     public void setMap(Map<String, Integer> stats)
     {
-        stats.put("AG", WeaponSkill);
+        stats.put("WS", WeaponSkill);
         stats.put("BS", BallisticSkill);
-        stats.put("Int", Strength );
-        stats.put("Per", Toughness);
-        stats.put("Str", Agility);
-        stats.put("T", Intelligence);
-        stats.put("WS", Perception);
-        stats.put("WP", Willpower);
+        stats.put("Str", Strength );
+        stats.put("T", Toughness);
+        stats.put("Ag", Agility);
+        stats.put("Int", Intelligence);
+        stats.put("Per", Perception);
+        stats.put("Wp", Willpower);
         stats.put("Fel", Fellowship);
+    }
+    public void setStatline(int [] statline)
+    {
+        WeaponSkill = 25 +statline[0];
+        BallisticSkill = 25 +statline[1];
+        Strength = 25 + statline[2];
+        Toughness = 25 + statline[3];
+        Agility = 25 + statline[4];
+        Intelligence = 25 + statline[5];
+        Perception = 25 + statline[6];
+        Willpower = 25 + statline[7];
+        Fellowship = 25 +statline[8];
+        System.out.println(WeaponSkill);
+    }
+    
+    public void printStats()
+    {
+        for (Map.Entry<String,Integer> entry : stats.entrySet()) 
+        {
+                String key = entry.getKey();
+                int value = entry.getValue();
+                System.out.println("Your " + key + " score is " + value);
+        }
     }
 }

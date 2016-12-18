@@ -9,6 +9,7 @@ package rougetradergen;
  *
  * @author Hex
  */
+import com.sun.org.apache.bcel.internal.generic.NOP;
 import java.util.Random;
 public class RougeTraderGen {
     public Ui ui;
@@ -18,9 +19,9 @@ public class RougeTraderGen {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        produceUI();
-        System.out.println(rollDie(20));
-        Charecter steve = new Charecter();
+        //produceUI();
+        Charecter steve = generateCharecter();
+        steve.printStats();
     }
     public static void produceUI()
     {
@@ -33,6 +34,27 @@ public class RougeTraderGen {
     {
         Random rand = new Random();
         return rand.nextInt(maxRoll ) + 1;   
+    }
+    
+    public static int rollSDie(int number, int sides)
+    {
+        int total = 0;
+        for(int j =0; j < number; j ++)
+        {
+            total += rollDie(sides);
+        }
+        return total;
+    }
+    
+    public static Charecter generateCharecter()
+    {
+        int[] statline = new int[9];
+        for(int noStat =0; noStat <9; noStat++)
+        {
+            statline[noStat] = rollSDie(2, 10);
+        }
+        Charecter genChar = new Charecter(statline);
+        return genChar;
     }
     
 }
