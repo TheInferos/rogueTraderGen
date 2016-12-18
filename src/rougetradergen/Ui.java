@@ -106,7 +106,8 @@ public class Ui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Generate Charecter
+        Charecter ali = RougeTraderGen.generateCharecter();
+        ali.printStats();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

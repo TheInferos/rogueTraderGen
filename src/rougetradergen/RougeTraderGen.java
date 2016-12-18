@@ -19,9 +19,9 @@ public class RougeTraderGen {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //produceUI();
-        Charecter steve = generateCharecter();
-        steve.printStats();
+        produceUI();
+        //Charecter steve = generateCharecter();
+        //steve.printStats();
     }
     public static void produceUI()
     {
