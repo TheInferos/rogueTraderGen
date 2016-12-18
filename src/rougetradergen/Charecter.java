@@ -21,6 +21,7 @@ public class Charecter {
     public int Intelligence;
     public int Perception;
     public int Willpower;
+    public int Fellowship;
     public  Map<String, Integer> stats;
     
     public Charecter()
@@ -33,13 +34,14 @@ public class Charecter {
     }
     public void setMap(Map<String, Integer> stats)
     {
-        stats.put("AG", Agility);
+        stats.put("AG", WeaponSkill);
         stats.put("BS", BallisticSkill);
-        stats.put("Int", Intelligence );
-        stats.put("Per", Perception);
-        stats.put("Str", Strength);
-        stats.put("T", Toughness);
-        stats.put("WS", WeaponSkill);
+        stats.put("Int", Strength );
+        stats.put("Per", Toughness);
+        stats.put("Str", Agility);
+        stats.put("T", Intelligence);
+        stats.put("WS", Perception);
         stats.put("WP", Willpower);
+        stats.put("Fel", Fellowship);
     }
 }
