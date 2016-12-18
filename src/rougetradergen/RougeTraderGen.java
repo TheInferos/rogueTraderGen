@@ -20,7 +20,7 @@ public class RougeTraderGen {
     public static void main(String[] args) {
         produceUI();
         System.out.println(rollDie(20));
-        
+        Charecter steve = new Charecter();
     }
     public static void produceUI()
     {

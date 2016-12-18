@@ -25,16 +25,21 @@ public class Charecter {
     
     public Charecter()
     {
-        
+        WeaponSkill = 15;
+        Map<String, Integer> stats = new HashMap<String, Integer>();
+        setMap(stats);
+        WeaponSkill = 25;
         System.out.println(stats.get("WS"));
     }
-    public void setMap()
+    public void setMap(Map<String, Integer> stats)
     {
-        Map<String, Integer> stats = new HashMap<String, Integer>();
-        stats.put("WS", WeaponSkill);
         stats.put("AG", Agility);
         stats.put("BS", BallisticSkill);
         stats.put("Int", Intelligence );
         stats.put("Per", Perception);
+        stats.put("Str", Strength);
+        stats.put("T", Toughness);
+        stats.put("WS", WeaponSkill);
+        stats.put("WP", Willpower);
     }
 }
