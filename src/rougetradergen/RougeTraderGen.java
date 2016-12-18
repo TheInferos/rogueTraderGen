@@ -9,7 +9,6 @@ package rougetradergen;
  *
  * @author Hex
  */
-import com.sun.org.apache.bcel.internal.generic.NOP;
 import java.util.Random;
 public class RougeTraderGen {
     public Ui ui;
