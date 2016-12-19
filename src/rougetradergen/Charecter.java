@@ -27,14 +27,17 @@ public class Charecter {
     public String World;
     public  Map<String, Integer> stats;
     
-    public Charecter(int[] statline)
+    public Charecter(int[] statline, String homeWorld)
     {
+        World = homeWorld;
         setStatline(statline);
         worldStatChanges();
         stats = new HashMap<String, Integer>();
+        mapStats();
+        
 
     }
-    public void mapStats(Map<String, Integer> stats)
+    public void mapStats()
     {
         stats.put("WS", WeaponSkill);
         stats.put("BS", BallisticSkill);
@@ -61,12 +64,15 @@ public class Charecter {
     
     public void printStats()
     {
+                System.out.println("Your home planet is " + World);
+    
         for (Map.Entry<String,Integer> entry : stats.entrySet()) 
         {
                 String key = entry.getKey();
                 int value = entry.getValue();
                 System.out.println("Your " + key + " score is " + value);
         }
+
     }
     
     public void worldStatChanges()
@@ -114,4 +120,5 @@ public class Charecter {
     {
         return stat/10;
     }
+
 }

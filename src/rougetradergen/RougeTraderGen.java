@@ -19,8 +19,8 @@ public class RougeTraderGen {
      */
     public static void main(String[] args) {
         produceUI();
-        //Charecter steve = generateCharecter();
-        //steve.printStats();
+        Charecter steve = generateCharecter();
+        steve.printStats();
     }
     public static void produceUI()
     {
@@ -52,8 +52,23 @@ public class RougeTraderGen {
         {
             statline[noStat] = rollSDie(2, 10);
         }
-        Charecter genChar = new Charecter(statline);
+        Random rand = new Random();
+        String[]listOfWorlds = listWorlds();
+        String world = listOfWorlds[rand.nextInt(listOfWorlds.length)];
+        Charecter genChar = new Charecter(statline, world);
         return genChar;
     }
     
+    public static String[] listWorlds()
+    {
+        String[] listOfWorlds = new String[6];
+        listOfWorlds[0] = "Death World";
+        listOfWorlds[1] = "Void Born";
+        listOfWorlds[2] = "Forge World";
+        listOfWorlds[3] = "Hive World";
+        listOfWorlds[4] = "Imperial World";
+        listOfWorlds[5] = "Noble Born";
+        return listOfWorlds;
+    } 
+
 }
