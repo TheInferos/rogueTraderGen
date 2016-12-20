@@ -14,8 +14,10 @@ public class Scavenger extends BirthRight {
     {
         super();
     }
-        public int[] statChanges(int[] stats)
+        public int[] statChanges(int[] stats) // choice of the two pg 25 pdf
     {
+        stats[4]+=3;
+        stats[7]+=3;
         return stats;
     }
     

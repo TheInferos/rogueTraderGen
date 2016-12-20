@@ -14,8 +14,11 @@ public class Savant extends BirthRight{
     {
         super();
     }
-        public int[] statChanges(int[] stats)
+        public int[] statChanges(int[] stats) //choice of sats[3] and stats[5] pg26 pdf
     {
+        stats[3]-=3;
+        stats[5]+=3;
+        stats[8]+=3;
         return stats;
     }
     

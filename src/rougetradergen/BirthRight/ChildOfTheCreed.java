@@ -15,8 +15,11 @@ public class ChildOfTheCreed extends BirthRight {
         super();
     }
     
-    public int[] statChanges(int[] stats)
+    public int[] statChanges(int[] stats) //Choice between stats[7] and stats[8] pg26 pdf
     {
+        stats[0]-=3;
+        stats[7]+=3;
+        stats[8]+=3;
         return stats;
     }
     
