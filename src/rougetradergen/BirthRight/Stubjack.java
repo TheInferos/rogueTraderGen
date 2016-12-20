@@ -9,6 +9,23 @@ package rougetradergen.BirthRight;
  *
  * @author Hex
  */
-public class Stubjack {
+public class Stubjack extends BirthRight {
+        public Stubjack()
+    {
+        super();
+    }
+        public int[] statChanges(int[] stats)
+    {
+        return stats;
+    }
     
+    public String[] skillList(String[] skills)
+    {
+        return skills;
+    }
+    
+    public String[] talentList(String[] talents)
+    {
+        return talents;
+    }
 }

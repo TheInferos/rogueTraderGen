@@ -3,18 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rougetradergen.BirthRight;
+package rougetradergen.Motivation;
 
 /**
  *
  * @author Hex
  */
-public class Scapegrace extends BirthRight {
-        public Scapegrace()
+public class Renown extends Motivation {
+    public Renown()
     {
         super();
     }
-        public int[] statChanges(int[] stats)
+    
+    public int[] statChanges(int[] stats)
     {
         return stats;
     }
@@ -28,4 +29,5 @@ public class Scapegrace extends BirthRight {
     {
         return talents;
     }
+    
 }

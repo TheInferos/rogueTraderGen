@@ -9,6 +9,26 @@ package rougetradergen.LureOfTheVoid;
  *
  * @author Hex
  */
-public class Calamity {
+public class Calamity extends LureOfTheVoid {
+    
+    public Calamity()
+    {
+        super();
+    }
+    
+    public int[] statChanges(int[] stats)
+    {
+        return stats;
+    }
+    
+    public String[] skillList(String[] skills)
+    {
+        return skills;
+    }
+    
+    public String[] talentList(String[] talents)
+    {
+        return talents;
+    }
     
 }

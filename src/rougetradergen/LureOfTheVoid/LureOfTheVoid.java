@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rougetradergen.BirthRight;
+package rougetradergen.LureOfTheVoid;
 
 /**
  *
  * @author Hex
  */
-public abstract class BirthRight {
-    public BirthRight()
+public abstract class LureOfTheVoid {
+    public LureOfTheVoid()
     {
         
     }

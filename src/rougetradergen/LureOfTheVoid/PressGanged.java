@@ -9,6 +9,24 @@ package rougetradergen.LureOfTheVoid;
  *
  * @author Hex
  */
-public class PressGanged {
+public class PressGanged extends LureOfTheVoid{
+    public PressGanged()
+    {
+        super();
+    }
     
+    public int[] statChanges(int[] stats)
+    {
+        return stats;
+    }
+    
+    public String[] skillList(String[] skills)
+    {
+        return skills;
+    }
+    
+    public String[] talentList(String[] talents)
+    {
+        return talents;
+    }
 }

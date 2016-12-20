@@ -5,10 +5,8 @@
  */
 package rougetradergen;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.CaseInsensitiveMap;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import rougetradergen.worlds.World;
 /**
  *
@@ -33,8 +31,9 @@ public class Charecter {
     public Charecter(int[] statline)
     {
         setStatline(statline);
-        worldStatChanges(statline);
+        //worldStatChanges(statline);
         stats = new HashMap<String, Integer>();
+        mapStats(stats);
 
     }
     public void mapStats(Map<String, Integer> stats)
@@ -95,8 +94,7 @@ public class Charecter {
                 break;
             case "NobleBorn":
                 Wounds = RougeTraderGen.rollDie(5)+2*(getBonus(Toughness));
-                break;
-                    
+                break;                    
             default:
                 break;
         }
