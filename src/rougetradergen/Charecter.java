@@ -25,6 +25,8 @@ public class Charecter {
     public int Willpower;
     public int Fellowship;
     public int Wounds;
+    public int InsanityPoints;
+    public int CorruptionPoints;
     public World World;
     public  Map<String, Integer> stats;
     
