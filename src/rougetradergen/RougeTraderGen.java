@@ -10,6 +10,7 @@ package rougetradergen;
  * @author Hex
  */
 import java.util.Random;
+        
 public class RougeTraderGen {
     public Ui ui;
     
@@ -18,7 +19,9 @@ public class RougeTraderGen {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        produceUI();
+        //produceUI();
+        rougetradergen.worlds.World test = new rougetradergen.worlds.DeathWorld();
+        System.out.println(test.getClass().getSimpleName());
         //Charecter steve = generateCharecter();
         //steve.printStats();
     }

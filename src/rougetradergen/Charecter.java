@@ -9,6 +9,7 @@ import com.sun.org.apache.xerces.internal.impl.xpath.regex.CaseInsensitiveMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import rougetradergen.worlds.World;
 /**
  *
  * @author Hex
@@ -24,13 +25,13 @@ public class Charecter {
     public int Willpower;
     public int Fellowship;
     public int Wounds;
-    public String World;
+    public World World;
     public  Map<String, Integer> stats;
     
     public Charecter(int[] statline)
     {
         setStatline(statline);
-        worldStatChanges();
+        worldStatChanges(statline);
         stats = new HashMap<String, Integer>();
 
     }
@@ -69,39 +70,28 @@ public class Charecter {
         }
     }
     
-    public void worldStatChanges()
+    public void worldStatChanges(int [] statline)
     {
+        World.statChanges(statline);
         if (null != World)
-        switch (World) {
-            case "Death World":
-                Strength += 5;
-                Toughness += 5;
-                Willpower -= 5;
-                Fellowship -= 5;
+        switch (World.getClass().getSimpleName()) 
+        {
+            case "DeathWorld":
                 Wounds = RougeTraderGen.rollDie(5)+2+2*(getBonus(Toughness));
                 break;
-            case "Void Born":
-                Strength -= 5;
-                Willpower += 5;
+            case "VoidBorn":
                 Wounds = RougeTraderGen.rollDie(5)+2*(getBonus(Toughness));
                 break;
-            case "Forge World":
-                WeaponSkill -= 5;
-                Intelligence += 5;
+            case "ForgeWorld":
                 Wounds = RougeTraderGen.rollDie(5)+1+2*(getBonus(Toughness));
                 break;
-            case "Hive World":
-                Toughness -= 5;
-                Fellowship += 5;
+            case "HiveWorld":
                 Wounds = RougeTraderGen.rollDie(5)+ 1+2*(getBonus(Toughness));
                 break;
-            case "Imperial World":
-                Willpower += 3;
+            case "ImperialWorld":
                 Wounds = RougeTraderGen.rollDie(5)+2*(getBonus(Toughness));
                 break;
-            case "Noble Born":
-                Willpower -= 5;
-                Fellowship +=5;
+            case "NobleBorn":
                 Wounds = RougeTraderGen.rollDie(5)+2*(getBonus(Toughness));
                 break;
                     
