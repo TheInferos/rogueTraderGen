@@ -78,22 +78,22 @@ public class Charecter {
         switch (World.getClass().getSimpleName()) 
         {
             case "DeathWorld":
-                Wounds = RougeTraderGen.rollDie(5)+2+2*(getBonus(Toughness));
+                Wounds = RogueTraderGen.rollDie(5)+2+2*(getBonus(Toughness));
                 break;
             case "VoidBorn":
-                Wounds = RougeTraderGen.rollDie(5)+2*(getBonus(Toughness));
+                Wounds = RogueTraderGen.rollDie(5)+2*(getBonus(Toughness));
                 break;
             case "ForgeWorld":
-                Wounds = RougeTraderGen.rollDie(5)+1+2*(getBonus(Toughness));
+                Wounds = RogueTraderGen.rollDie(5)+1+2*(getBonus(Toughness));
                 break;
             case "HiveWorld":
-                Wounds = RougeTraderGen.rollDie(5)+ 1+2*(getBonus(Toughness));
+                Wounds = RogueTraderGen.rollDie(5)+ 1+2*(getBonus(Toughness));
                 break;
             case "ImperialWorld":
-                Wounds = RougeTraderGen.rollDie(5)+2*(getBonus(Toughness));
+                Wounds = RogueTraderGen.rollDie(5)+2*(getBonus(Toughness));
                 break;
             case "NobleBorn":
-                Wounds = RougeTraderGen.rollDie(5)+2*(getBonus(Toughness));
+                Wounds = RogueTraderGen.rollDie(5)+2*(getBonus(Toughness));
                 break;                    
             default:
                 break;
