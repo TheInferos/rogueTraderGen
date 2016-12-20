@@ -3,12 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rougetradergen.BirthRight.TrailsAndTravails;
+package rougetradergen.TrailsAndTravails;
 
 /**
  *
  * @author Hex
  */
-public class DarkVoyage {
+public class DarkVoyage extends TrailsAndTravails {
+    public DarkVoyage()
+    {
+        super();
+    }
     
+    public int[] statChanges(int[] stats)
+    {
+        return stats;
+    }
+    
+    public String[] skillList(String[] skills)
+    {
+        return skills;
+    }
+    
+    public String[] talentList(String[] talents)
+    {
+        return talents;
+    }
 }

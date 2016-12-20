@@ -17,7 +17,7 @@ public class DeathWorld extends World{
     }
     
     @Override
-    public int [] statChanges(int [] statline)
+    public int [] statChanges(int[] statline)
     {
         statline[0] += 5;
         statline[3] += 5;
