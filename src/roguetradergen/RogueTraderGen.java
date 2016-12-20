@@ -20,7 +20,7 @@ public class RogueTraderGen {
      */
     public static void main(String[] args) {
         //produceUI();
-        //rougetradergen.worlds.World test = new rougetradergen.worlds.DeathWorld();
+        //roguetradergen.worlds.World test = new roguetradergen.worlds.DeathWorld();
         //System.out.println(test.getClass().getSimpleName());
         //Charecter steve = generateCharecter();
         //steve.printStats();
@@ -38,7 +38,7 @@ public class RogueTraderGen {
     public static void produceUI()
     {
         Ui ui = new Ui();
-        ui.setTitle("RougeTrader Gen");
+        ui.setTitle("RogueTrader Gen");
         ui.setVisible(true);
     }
     

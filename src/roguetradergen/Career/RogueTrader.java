@@ -9,6 +9,6 @@ package roguetradergen.Career;
  *
  * @author Hex
  */
-public class RougeTrader {
+public class RogueTrader {
     
 }
