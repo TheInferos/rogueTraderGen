@@ -31,4 +31,19 @@ public class Stubjack extends BirthRight {
     {
         return talents;
     }
+    public roguetradergen.LureOfTheVoid.LureOfTheVoid whereNext(int movement)
+    {
+        if (movement == -1)
+        {
+            return new roguetradergen.LureOfTheVoid.Criminal();
+        }
+        else if(movement == 1)
+            {
+                return new roguetradergen.LureOfTheVoid.DutyBound();
+            }        
+        else 
+        {
+            return new roguetradergen.LureOfTheVoid.Renegade();
+        }
+    } 
 }

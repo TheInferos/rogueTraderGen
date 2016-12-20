@@ -31,4 +31,19 @@ public class Savant extends BirthRight{
     {
         return talents;
     }
+    public roguetradergen.LureOfTheVoid.LureOfTheVoid whereNext(int movement)
+    {
+        if (movement == -1)
+        {
+            return new roguetradergen.LureOfTheVoid.DutyBound();
+        }
+        else if(movement == 1)
+            {
+                return new roguetradergen.LureOfTheVoid.ChosenByDestiny();
+            }        
+        else 
+        {
+            return new roguetradergen.LureOfTheVoid.Zealot();
+        }
+    } 
 }

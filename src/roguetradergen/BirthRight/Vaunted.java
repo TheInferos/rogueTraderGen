@@ -31,4 +31,20 @@ public class Vaunted extends BirthRight {
     {
         return talents;
     }
+    public roguetradergen.LureOfTheVoid.LureOfTheVoid whereNext(int movement)
+    {
+        if (movement == 1 ) // cant go right
+       {
+           movement = roguetradergen.RogueTraderGen.rollDie(2)-1;
+       }
+        
+        if(movement == -1)
+            {
+                return new roguetradergen.LureOfTheVoid.Zealot();
+            }        
+        else 
+        {
+            return new roguetradergen.LureOfTheVoid.ChosenByDestiny();
+        }
+    } 
 }

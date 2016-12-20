@@ -112,6 +112,7 @@ public class RogueTraderGen {
                 
         return position;
     }
+    
     public static int unsignIt(int number)
     {
         return (int)(Math.sqrt(number*number));

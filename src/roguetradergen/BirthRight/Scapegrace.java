@@ -30,4 +30,19 @@ public class Scapegrace extends BirthRight {
     {
         return talents;
     }
+    public roguetradergen.LureOfTheVoid.LureOfTheVoid whereNext(int movement)
+    {
+        if (movement == -1)
+        {
+            return new roguetradergen.LureOfTheVoid.Tainted();
+        }
+        else if(movement == 1)
+            {
+                return new roguetradergen.LureOfTheVoid.Renegade();
+            }        
+        else 
+        {
+            return new roguetradergen.LureOfTheVoid.Criminal();
+        }
+    } 
 }

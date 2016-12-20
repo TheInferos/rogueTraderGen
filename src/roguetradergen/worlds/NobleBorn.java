@@ -32,5 +32,19 @@ public class NobleBorn extends World{
         return talents;
     }
 
-    
+    public roguetradergen.BirthRight.BirthRight whereNext(int movement)
+    {
+       if (movement == 1 ) // cant go right
+       {
+           movement = roguetradergen.RogueTraderGen.rollDie(2)-2;
+       }
+        if (movement == 0)
+        {
+            return new roguetradergen.BirthRight.Vaunted();
+        }
+        else 
+        {
+            return new roguetradergen.BirthRight.Savant();
+        }
+    }
 }

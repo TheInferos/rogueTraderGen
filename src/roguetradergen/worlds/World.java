@@ -20,4 +20,6 @@ public abstract class World {
     public abstract String[] addSkills(String[] skills);
     
     public abstract String[] addTalents(String[] talents);
+    
+     public abstract roguetradergen.BirthRight.BirthRight whereNext(int movement);
 }

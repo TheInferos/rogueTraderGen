@@ -38,4 +38,19 @@ public class DeathWorld extends World{
         return Talents;
     }
     
+    public roguetradergen.BirthRight.BirthRight whereNext(int movement)
+    {
+       if (movement == -1 ) // cant go left
+       {
+           movement = roguetradergen.RogueTraderGen.rollDie(2)-1;
+       }
+        if (movement == 0)
+        {
+            return new roguetradergen.BirthRight.Scavenger();
+        }
+        else 
+        {
+            return new roguetradergen.BirthRight.Scapegrace();
+        }
+    }
 }

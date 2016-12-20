@@ -31,5 +31,20 @@ public class HiveWorld extends World{
     {
         return talents;
     }
-
+    public roguetradergen.BirthRight.BirthRight whereNext(int movement)
+    {
+            if (movement == -1)
+        {
+            return new roguetradergen.BirthRight.Stubjack();
+        }
+            else if(movement == 1)
+            {
+                return new roguetradergen.BirthRight.Savant();
+            }
+                
+        else 
+        {
+            return new roguetradergen.BirthRight.ChildOfTheCreed();
+        }
+    }
 }

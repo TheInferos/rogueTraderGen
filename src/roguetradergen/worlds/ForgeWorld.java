@@ -31,4 +31,21 @@ public class ForgeWorld extends World {
     {
         return talents;
     }
+    
+    public roguetradergen.BirthRight.BirthRight whereNext(int movement)
+    {
+            if (movement == -1)
+        {
+            return new roguetradergen.BirthRight.Scapegrace();
+        }
+            else if(movement == 1)
+            {
+                return new roguetradergen.BirthRight.ChildOfTheCreed();
+            }
+                
+        else 
+        {
+            return new roguetradergen.BirthRight.Stubjack();
+        }
+    }
 }

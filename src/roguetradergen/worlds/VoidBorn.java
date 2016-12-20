@@ -31,4 +31,21 @@ public class VoidBorn extends World{
     {
         return talents;
     }
+      public roguetradergen.BirthRight.BirthRight whereNext(int movement)
+    {
+            if (movement == -1)
+        {
+            return new roguetradergen.BirthRight.Scavenger();
+        }
+            else if(movement == 1)
+            {
+                return new roguetradergen.BirthRight.Stubjack();
+            }
+                
+        else 
+        {
+            return new roguetradergen.BirthRight.Scapegrace();
+        }
+    }
 }
+

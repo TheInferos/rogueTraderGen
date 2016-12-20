@@ -19,4 +19,6 @@ public abstract class BirthRight {
     public abstract String[] skillList(String[] skills);
     
     public abstract String[] talentList(String[] talents);
+    
+    public abstract roguetradergen.LureOfTheVoid.LureOfTheVoid whereNext(int movement);
 }

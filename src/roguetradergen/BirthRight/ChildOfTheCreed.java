@@ -32,5 +32,20 @@ public class ChildOfTheCreed extends BirthRight {
     {
         return talents;
     }
-    
+    public roguetradergen.LureOfTheVoid.LureOfTheVoid whereNext(int movement)
+    {
+            if (movement == -1)
+        {
+            return new roguetradergen.LureOfTheVoid.Renegade();
+        }
+            else if(movement == 1)
+            {
+                return new roguetradergen.LureOfTheVoid.Zealot();
+            }        
+        else 
+        {
+            return new roguetradergen.LureOfTheVoid.DutyBound();
+        }
+    } 
+
 }

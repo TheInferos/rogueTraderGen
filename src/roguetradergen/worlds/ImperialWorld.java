@@ -31,4 +31,20 @@ public class ImperialWorld extends World {
         return talents;
     }
 
+    public roguetradergen.BirthRight.BirthRight whereNext(int movement)
+    {
+            if (movement == -1)
+        {
+            return new roguetradergen.BirthRight.ChildOfTheCreed();
+        }
+            else if(movement == 1)
+            {
+                return new roguetradergen.BirthRight.Vaunted();
+            }
+                
+        else 
+        {
+            return new roguetradergen.BirthRight.Savant();
+        }
+    }
 }
