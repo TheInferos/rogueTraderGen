@@ -30,5 +30,20 @@ public class Renown extends Motivation {
         // choice air of authority or peer(any one)
         return talents;
     }
+    public roguetradergen.Career.Career whereNext(int movement)
+    {
+        if (movement == -1)
+        {
+            return new roguetradergen.Career.Explorator();
+        }
+        else if(movement == 1)
+            {
+                return new roguetradergen.Career.Seneschal();
+            }        
+        else 
+        {
+            return new roguetradergen.Career.Missionary();
+        }
+    } 
     
 }

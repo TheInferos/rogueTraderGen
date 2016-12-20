@@ -31,4 +31,19 @@ public class Tainted extends LureOfTheVoid {
         return talents;
     }
     
+    public roguetradergen.TrailsAndTravails.TrailsAndTravails whereNext(int movement)
+    {
+        if (movement == -1 ) // cant go left
+       {
+           movement = roguetradergen.RogueTraderGen.rollDie(2)-1;
+       }
+        if(movement == 1)
+        {
+            return new roguetradergen.TrailsAndTravails.PressGanged();
+        }        
+        else 
+        {
+            return new roguetradergen.TrailsAndTravails.TheHandOfWar();
+        }
+    } 
 }

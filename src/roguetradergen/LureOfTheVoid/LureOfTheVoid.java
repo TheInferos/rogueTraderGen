@@ -19,4 +19,6 @@ public abstract class LureOfTheVoid {
     public abstract String[] skillList(String[] skills);
     
     public abstract String[] talentList(String[] talents);
+    
+    public abstract roguetradergen.TrailsAndTravails.TrailsAndTravails whereNext(int movement);
 }

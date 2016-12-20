@@ -30,4 +30,19 @@ public class Endurance extends Motivation {
     {
         return talents;
     }
+    public roguetradergen.Career.Career whereNext(int movement)
+    {
+        if (movement == -1)
+        {
+            return new roguetradergen.Career.AstropathTranscendent();
+        }
+        else if(movement == 1)
+            {
+                return new roguetradergen.Career.VoidMaster();
+            }        
+        else 
+        {
+            return new roguetradergen.Career.Archmilitant();
+        }
+    } 
 }

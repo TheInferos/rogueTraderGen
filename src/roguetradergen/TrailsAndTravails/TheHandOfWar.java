@@ -29,4 +29,20 @@ public class TheHandOfWar extends TrailsAndTravails{
     {
         return talents;
     }
+    
+    public roguetradergen.Motivation.Motivation whereNext(int movement)
+    {
+        if (movement == -1 ) // cant go left
+       {
+           movement = roguetradergen.RogueTraderGen.rollDie(2)-1;
+       }
+        if(movement == 1)
+            {
+                return new roguetradergen.Motivation.Endurance();
+            }        
+        else 
+        {
+            return new roguetradergen.Motivation.Fortune();
+        }
+    } 
 }

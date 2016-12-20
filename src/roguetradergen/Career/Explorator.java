@@ -9,6 +9,25 @@ package roguetradergen.Career;
  *
  * @author Hex
  */
-public class Explorator {
+public class Explorator extends Career  {
+    public Explorator()
+    {
+        
+    }
+            
     
+    public  int[] statChanges(int[] stats)
+    {
+        return stats;
+    }
+    
+    public String[] skillList(String[] skills)
+    {
+        return skills;
+    }
+    
+    public String[] talentList(String[] talents)
+    {
+        return talents;
+    }
 }

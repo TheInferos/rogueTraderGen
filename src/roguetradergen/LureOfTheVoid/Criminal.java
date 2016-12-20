@@ -29,4 +29,20 @@ public class Criminal extends LureOfTheVoid{
     {
         return talents;
     }
+    
+    public roguetradergen.TrailsAndTravails.TrailsAndTravails whereNext(int movement)
+    {
+            if (movement == -1)
+        {
+            return new roguetradergen.TrailsAndTravails.TheHandOfWar();
+        }
+            else if(movement == 1)
+            {
+                return new roguetradergen.TrailsAndTravails.Calamity();
+            }        
+        else 
+        {
+            return new roguetradergen.TrailsAndTravails.PressGanged();
+        }
+    } 
 }

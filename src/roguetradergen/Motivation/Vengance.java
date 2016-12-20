@@ -30,5 +30,20 @@ public class Vengance extends Motivation {
         // hated(any one)
         return talents;
     }
+    public roguetradergen.Career.Career whereNext(int movement)
+    {
+        if (movement == -1)
+        {
+            return new roguetradergen.Career.VoidMaster();
+        }
+        else if(movement == 1)
+            {
+                return new roguetradergen.Career.Missionary();
+            }        
+        else 
+        {
+            return new roguetradergen.Career.Explorator();
+        }
+    } 
     
 }

@@ -29,4 +29,20 @@ public class Renegade extends LureOfTheVoid {
     {
         return talents;
     }
+    
+    public roguetradergen.TrailsAndTravails.TrailsAndTravails whereNext(int movement)
+    {
+            if (movement == -1)
+        {
+            return new roguetradergen.TrailsAndTravails.PressGanged();
+        }
+            else if(movement == 1)
+            {
+                return new roguetradergen.TrailsAndTravails.ShipLorn();
+            }        
+        else 
+        {
+            return new roguetradergen.TrailsAndTravails.Calamity();
+        }
+    } 
 }

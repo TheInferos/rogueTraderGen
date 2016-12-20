@@ -30,5 +30,19 @@ public class Fortune extends Motivation {
     {
         return talents;
     }
-    
+    public roguetradergen.Career.Career whereNext(int movement)
+    {
+        if (movement == -1)
+        {
+            return new roguetradergen.Career.Archmilitant();
+        }
+        else if(movement == 1)
+            {
+                return new roguetradergen.Career.Explorator();
+            }        
+        else 
+        {
+            return new roguetradergen.Career.VoidMaster();
+        }
+    }   
 }

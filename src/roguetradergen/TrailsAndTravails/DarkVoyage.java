@@ -37,4 +37,20 @@ public class DarkVoyage extends TrailsAndTravails {
         
         return other;
     }
+    
+    public roguetradergen.Motivation.Motivation whereNext(int movement)
+    {
+        if (movement == -1)
+        {
+            return new roguetradergen.Motivation.Renown();
+        }
+        else if(movement == 1)
+            {
+                return new roguetradergen.Motivation.Prestige();
+            }        
+        else 
+        {
+            return new roguetradergen.Motivation.Pride();
+        }
+    } 
 }

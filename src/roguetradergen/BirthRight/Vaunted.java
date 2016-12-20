@@ -35,7 +35,7 @@ public class Vaunted extends BirthRight {
     {
         if (movement == 1 ) // cant go right
        {
-           movement = roguetradergen.RogueTraderGen.rollDie(2)-1;
+           movement = roguetradergen.RogueTraderGen.rollDie(2)-2;
        }
         
         if(movement == -1)

@@ -29,4 +29,20 @@ public class PressGanged extends TrailsAndTravails{
     {
         return talents;
     }
+    
+    public roguetradergen.Motivation.Motivation whereNext(int movement)
+    {
+        if (movement == -1)
+        {
+            return new roguetradergen.Motivation.Endurance();
+        }
+        else if(movement == 1)
+            {
+                return new roguetradergen.Motivation.Vengance();
+            }        
+        else 
+        {
+            return new roguetradergen.Motivation.Fortune();
+        }
+    } 
 }

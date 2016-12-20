@@ -34,4 +34,20 @@ public class ShipLorn extends TrailsAndTravails {
         //reroll wound recovery fate point dices.
         return other;
     }
+    
+    public roguetradergen.Motivation.Motivation whereNext(int movement)
+    {
+        if (movement == -1)
+        {
+            return new roguetradergen.Motivation.Vengance();
+        }
+        else if(movement == 1)
+            {
+                return new roguetradergen.Motivation.Pride();
+            }        
+        else 
+        {
+            return new roguetradergen.Motivation.Renown();
+        }
+    } 
 }

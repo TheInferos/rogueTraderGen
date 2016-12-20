@@ -35,4 +35,19 @@ public class Pride extends Motivation {
         //heirloom
         return gear;
     }
+    public roguetradergen.Career.Career whereNext(int movement)
+    {
+        if (movement == -1)
+        {
+            return new roguetradergen.Career.Missionary();
+        }
+        else if(movement == 1)
+            {
+                return new roguetradergen.Career.Navigator();
+            }        
+        else 
+        {
+            return new roguetradergen.Career.Seneschal();
+        }
+    } 
 }

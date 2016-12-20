@@ -35,4 +35,20 @@ public class HighVendetta extends TrailsAndTravails {
     {
         return other;
     }
+    
+    public roguetradergen.Motivation.Motivation whereNext(int movement)
+    {
+        if (movement == 1 ) // cant go left
+       {
+           movement = roguetradergen.RogueTraderGen.rollDie(2)-2;
+       }
+        if (movement == -1)
+        {
+            return new roguetradergen.Motivation.Pride();
+        }     
+        else 
+        {
+            return new roguetradergen.Motivation.Prestige();
+        }
+    } 
 }

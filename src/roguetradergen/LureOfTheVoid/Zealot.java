@@ -29,4 +29,20 @@ public class Zealot extends LureOfTheVoid {
     {
         return talents;
     }
+    
+    public roguetradergen.TrailsAndTravails.TrailsAndTravails whereNext(int movement)
+    {
+            if (movement == -1)
+        {
+            return new roguetradergen.TrailsAndTravails.ShipLorn();
+        }
+            else if(movement == 1)
+            {
+                return new roguetradergen.TrailsAndTravails.HighVendetta();
+            }        
+        else 
+        {
+            return new roguetradergen.TrailsAndTravails.DarkVoyage();
+        }
+    } 
 }

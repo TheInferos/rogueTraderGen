@@ -19,4 +19,6 @@ public abstract class TrailsAndTravails {
     public abstract String[] skillList(String[] skills);
     
     public abstract String[] talentList(String[] talents);
+    
+    public abstract roguetradergen.Motivation.Motivation whereNext(int movement);
 }

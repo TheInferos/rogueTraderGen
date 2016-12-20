@@ -9,8 +9,8 @@ package roguetradergen.Motivation;
  *
  * @author Hex
  */
-public class Persistance extends Motivation{
-    public Persistance()
+public class Prestige extends Motivation{
+    public Prestige()
     {
         super();
     }
@@ -30,4 +30,19 @@ public class Persistance extends Motivation{
         // choice talented any or peer(one)
         return talents;
     }
+    public roguetradergen.Career.Career whereNext(int movement)
+    {
+        if (movement == -1)
+        {
+            return new roguetradergen.Career.Seneschal();
+        }
+        else if(movement == 1)
+            {
+                return new roguetradergen.Career.RogueTrader();
+            }        
+        else 
+        {
+            return new roguetradergen.Career.Navigator();
+        }
+    }     
 }

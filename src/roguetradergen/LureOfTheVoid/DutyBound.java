@@ -29,4 +29,20 @@ public class DutyBound extends LureOfTheVoid{
     {
         return talents;
     }
+    
+    public roguetradergen.TrailsAndTravails.TrailsAndTravails whereNext(int movement)
+    {
+            if (movement == -1)
+        {
+            return new roguetradergen.TrailsAndTravails.Calamity();
+        }
+            else if(movement == 1)
+            {
+                return new roguetradergen.TrailsAndTravails.DarkVoyage();
+            }        
+        else 
+        {
+            return new roguetradergen.TrailsAndTravails.ShipLorn();
+        }
+    } 
 }

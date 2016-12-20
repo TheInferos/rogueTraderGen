@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package roguetradergen.Motivation;
+package roguetradergen.Career;
 
 /**
  *
  * @author Hex
  */
-public abstract class Motivation {
-    public Motivation()
+public abstract class Career {
+    public Career()
     {
         
     }
@@ -19,6 +19,4 @@ public abstract class Motivation {
     public abstract String[] skillList(String[] skills);
     
     public abstract String[] talentList(String[] talents);
-    
-    public abstract roguetradergen.Career.Career whereNext(int movement);
 }

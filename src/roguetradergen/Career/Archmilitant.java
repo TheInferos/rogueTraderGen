@@ -9,6 +9,23 @@ package roguetradergen.Career;
  *
  * @author Hex
  */
-public class Archmilitant {
+public class Archmilitant extends Career {
+    public Archmilitant()
+    {
+        
+    }
+    public  int[] statChanges(int[] stats)
+    {
+        return stats;
+    }
     
+    public String[] skillList(String[] skills)
+    {
+        return skills;
+    }
+    
+    public String[] talentList(String[] talents)
+    {
+        return talents;
+    }
 }
