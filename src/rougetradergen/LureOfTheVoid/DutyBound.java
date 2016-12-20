@@ -9,9 +9,8 @@ package rougetradergen.LureOfTheVoid;
  *
  * @author Hex
  */
-public class Calamity extends LureOfTheVoid {
-    
-    public Calamity()
+public class DutyBound extends LureOfTheVoid{
+    public DutyBound()
     {
         super();
     }
@@ -30,5 +29,4 @@ public class Calamity extends LureOfTheVoid {
     {
         return talents;
     }
-    
 }

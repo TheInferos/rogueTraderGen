@@ -9,8 +9,9 @@ package rougetradergen.LureOfTheVoid;
  *
  * @author Hex
  */
-public class Presitige extends LureOfTheVoid {
-    public Presitige()
+public class Tainted extends LureOfTheVoid {
+    
+    public Tainted()
     {
         super();
     }
@@ -29,4 +30,5 @@ public class Presitige extends LureOfTheVoid {
     {
         return talents;
     }
+    
 }

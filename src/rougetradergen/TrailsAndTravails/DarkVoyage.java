@@ -17,6 +17,7 @@ public class DarkVoyage extends TrailsAndTravails {
     
     public int[] statChanges(int[] stats)
     {
+        // 1d5 insanity points
         return stats;
     }
     
@@ -27,6 +28,13 @@ public class DarkVoyage extends TrailsAndTravails {
     
     public String[] talentList(String[] talents)
     {
+        // survival or dark soul talent
         return talents;
+    }
+    
+    public String[] Other(String[] other)
+    {
+        
+        return other;
     }
 }

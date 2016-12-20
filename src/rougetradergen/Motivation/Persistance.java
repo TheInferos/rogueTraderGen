@@ -27,6 +27,7 @@ public class Persistance extends Motivation{
     
     public String[] talentList(String[] talents)
     {
+        // choice talented any or peer(one)
         return talents;
     }
 }

@@ -22,11 +22,17 @@ public class HighVendetta extends TrailsAndTravails {
     
     public String[] skillList(String[] skills)
     {
+        //inquiry skill or +10
         return skills;
     }
     
     public String[] talentList(String[] talents)
     {
+        // chpoice diehard or paranoia
         return talents;
+    }
+    public String[] otherBits(String[] other)
+    {
+        return other;
     }
 }

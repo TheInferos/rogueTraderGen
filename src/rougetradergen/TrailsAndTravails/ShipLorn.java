@@ -29,4 +29,9 @@ public class ShipLorn extends TrailsAndTravails {
     {
         return talents;
     }
+    public String[] other(String[] other)
+    {
+        //reroll wound recovery fate point dices.
+        return other;
+    }
 }

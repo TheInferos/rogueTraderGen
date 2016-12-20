@@ -17,6 +17,7 @@ public class Pride extends Motivation {
     
     public int[] statChanges(int[] stats)
     {
+        
         return stats;
     }
     
@@ -28,5 +29,10 @@ public class Pride extends Motivation {
     public String[] talentList(String[] talents)
     {
         return talents;
+    }
+    public String[] other(String[] gear)
+    {
+        //heirloom
+        return gear;
     }
 }

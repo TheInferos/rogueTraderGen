@@ -12,6 +12,7 @@ package rougetradergen.Motivation;
 public class Fortune extends Motivation {
     public Fortune()
     {
+        // fateppint +1
         super();
     }
     

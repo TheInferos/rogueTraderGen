@@ -9,8 +9,8 @@ package rougetradergen.LureOfTheVoid;
  *
  * @author Hex
  */
-public class PressGanged extends LureOfTheVoid{
-    public PressGanged()
+public class ChosenByDestiny extends LureOfTheVoid {
+    public ChosenByDestiny()
     {
         super();
     }

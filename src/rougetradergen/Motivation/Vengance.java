@@ -27,6 +27,7 @@ public class Vengance extends Motivation {
     
     public String[] talentList(String[] talents)
     {
+        // hated(any one)
         return talents;
     }
     

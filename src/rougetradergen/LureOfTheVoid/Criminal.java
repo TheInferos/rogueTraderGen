@@ -9,8 +9,8 @@ package rougetradergen.LureOfTheVoid;
  *
  * @author Hex
  */
-public class TheHandOfWar extends LureOfTheVoid {
-    public TheHandOfWar()
+public class Criminal extends LureOfTheVoid{
+    public Criminal()
     {
         super();
     }

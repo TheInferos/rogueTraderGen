@@ -27,6 +27,7 @@ public class Renown extends Motivation {
     
     public String[] talentList(String[] talents)
     {
+        // choice air of authority or peer(any one)
         return talents;
     }
     

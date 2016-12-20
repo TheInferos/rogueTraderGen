@@ -17,6 +17,7 @@ public class Endurance extends Motivation {
     
     public int[] statChanges(int[] stats)
     {
+        // wound+1
         return stats;
     }
     

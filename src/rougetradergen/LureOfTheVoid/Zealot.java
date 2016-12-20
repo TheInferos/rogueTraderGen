@@ -9,8 +9,8 @@ package rougetradergen.LureOfTheVoid;
  *
  * @author Hex
  */
-public class DarkVoyage extends LureOfTheVoid{
-    public DarkVoyage()
+public class Zealot extends LureOfTheVoid {
+    public Zealot()
     {
         super();
     }
