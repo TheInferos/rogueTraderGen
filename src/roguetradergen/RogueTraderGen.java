@@ -10,8 +10,10 @@ package roguetradergen;
  * @author Hex
  */
 import java.util.Random;
+import roguetradergen.worlds.World;
         
 public class RogueTraderGen {
+
     public Ui ui;
     
     /**
@@ -22,11 +24,13 @@ public class RogueTraderGen {
         //produceUI();
         //roguetradergen.worlds.World test = new roguetradergen.worlds.DeathWorld();
         //System.out.println(test.getClass().getSimpleName());
-        //Charecter steve = generateCharecter();
-        //steve.printStats();
-        roguetradergen.worlds.World world = new roguetradergen.worlds.NobleBorn();
+
+        roguetradergen.worlds.World World = new roguetradergen.worlds.NobleBorn();
         roguetradergen.Career.Career career = new roguetradergen.Career.VoidMaster();
-        generatePathBr2Mot(world, career);
+        Charecter genChar = generateCharecter(World, career);
+        genChar.printStats();
+        genChar.modStats();
+        genChar.printStats();
     }
     public static void produceUI()
     {
@@ -51,29 +55,49 @@ public class RogueTraderGen {
         return total;
     }
     
-    public static Charecter generateCharecter()
+    public static Charecter generateCharecter(roguetradergen.worlds.World World, roguetradergen.Career.Career career)
     {
         int[] statline = new int[9];
         for(int noStat =0; noStat <9; noStat++)
         {
             statline[noStat] = rollSDie(2, 10);
-            System.out.println(statline[noStat]);
         }
-        Charecter genChar = new Charecter(statline);
+        roguetradergen.BirthRight.BirthRight birthRight = generateBirthRight(World, career.getPlace(), 5);
+        roguetradergen.LureOfTheVoid.LureOfTheVoid lure =generateLure(birthRight, career.getPlace(), 4);
+        roguetradergen.TrailsAndTravails.TrailsAndTravails trial =generateTrial(lure, career.getPlace(), 4);
+        roguetradergen.Motivation.Motivation motivation = generateMotivation(trial, career.getPlace(), 4);
+
+        
+        Charecter genChar = new Charecter(statline,World,birthRight, lure, trial, motivation, career);
         return genChar;
     }
     
-    public static void generatePathBr2Mot(roguetradergen.worlds.World homeWorld, roguetradergen.Career.Career chosenCareer)
+    public static roguetradergen.BirthRight.BirthRight generateBirthRight(roguetradergen.worlds.World homeWorld, int goal, int steps)
     {
-        roguetradergen.BirthRight.BirthRight birthRight = homeWorld.whereNext(whichPath(homeWorld.getPlace(), chosenCareer.getPlace(), 5));
-        roguetradergen.LureOfTheVoid.LureOfTheVoid lure = birthRight.whereNext(whichPath(birthRight.getPlace(), chosenCareer.getPlace(), 4));
-        roguetradergen.TrailsAndTravails.TrailsAndTravails trial = lure.whereNext(whichPath(lure.getPlace(), chosenCareer.getPlace(), 3));
-        roguetradergen.Motivation.Motivation motivation = trial.whereNext(whichPath(trial.getPlace(), chosenCareer.getPlace(), 2));
-        
-        System.out.println("your startpoint is " + homeWorld.getClass().getSimpleName() + " Birthright " + birthRight.getClass().getSimpleName() + " Lure  " + lure.getClass().getSimpleName()
-                + " trial is " + trial.getClass().getSimpleName() + " motivation is " + motivation.getClass().getSimpleName() + " the career you wanted is " + chosenCareer.getClass().getSimpleName() );
+         return homeWorld.whereNext(whichPath(homeWorld.getPlace(), goal, steps));
     }
     
+    public static roguetradergen.LureOfTheVoid.LureOfTheVoid generateLure(roguetradergen.BirthRight.BirthRight birthRight, int goal, int steps)
+    {
+         return birthRight.whereNext(whichPath(birthRight.getPlace(), goal, steps));
+    }
+    
+    public static roguetradergen.TrailsAndTravails.TrailsAndTravails generateTrial(roguetradergen.LureOfTheVoid.LureOfTheVoid lure, int goal, int steps)
+    {
+         return lure.whereNext(whichPath(lure.getPlace(), goal, steps));
+    }
+    
+    public static roguetradergen.Motivation.Motivation generateMotivation (roguetradergen.TrailsAndTravails.TrailsAndTravails trial, int goal, int steps)
+    {
+         return trial.whereNext(whichPath(trial.getPlace(), goal, steps));
+    }
+    
+    public static roguetradergen.Career.Career generateCareer(roguetradergen.Motivation.Motivation motivation, int goal, int steps)
+    {
+         return motivation.whereNext(whichPath(motivation.getPlace(), goal, steps));
+    }
+
+     
     public static int whichPath(int currentNumber, int goalNumber, int stepsLeft )
     {
         int position = 6;

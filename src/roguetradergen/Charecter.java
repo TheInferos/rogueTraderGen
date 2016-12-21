@@ -7,12 +7,12 @@ package roguetradergen;
 
 import java.util.HashMap;
 import java.util.Map;
-import roguetradergen.worlds.World;
 /**
  *
  * @author Hex
  */
 public class Charecter {
+    public int [] statline;
     public int WeaponSkill;
     public int BallisticSkill;
     public int Strength;
@@ -25,18 +25,32 @@ public class Charecter {
     public int Wounds;
     public int InsanityPoints;
     public int CorruptionPoints;
-    public World World;
-    public  Map<String, Integer> stats;
+    public roguetradergen.worlds.World World;
+    public roguetradergen.BirthRight.BirthRight birthRight;
+    public roguetradergen.LureOfTheVoid.LureOfTheVoid lure;
+    public roguetradergen.TrailsAndTravails.TrailsAndTravails trial;
+    public roguetradergen.Motivation.Motivation motivation;
+    public roguetradergen.Career.Career career;
+    public Map<String, Integer> stats;
     
-    public Charecter(int[] statline)
+    public Charecter(int[] statline, roguetradergen.worlds.World homeWorld, roguetradergen.BirthRight.BirthRight birthRight, 
+            roguetradergen.LureOfTheVoid.LureOfTheVoid lure, roguetradergen.TrailsAndTravails.TrailsAndTravails trial, roguetradergen.Motivation.Motivation motivation,
+            roguetradergen.Career.Career career)
     {
-        setStatline(statline);
-        //worldStatChanges(statline);
+        this.statline = statline;
+        setStatline();
+        World = homeWorld;
+        this.birthRight = birthRight;
+        this.lure = lure;
+        this.trial = trial;
+        this.motivation = motivation;
+        this.career = career;
+        modStats();
         stats = new HashMap<String, Integer>();
-        mapStats(stats);
+        mapStats();
 
     }
-    public void mapStats(Map<String, Integer> stats)
+    public void mapStats()
     {
         stats.put("WS", WeaponSkill);
         stats.put("BS", BallisticSkill);
@@ -48,7 +62,7 @@ public class Charecter {
         stats.put("Wp", Willpower);
         stats.put("Fel", Fellowship);
     }
-    public void setStatline(int [] statline)
+    public void setStatline()
     {
         WeaponSkill = 25 +statline[0];
         BallisticSkill = 25 +statline[1];
@@ -61,6 +75,19 @@ public class Charecter {
         Fellowship = 25 +statline[8];
     }
     
+    public void refreshStatline()
+    {
+        WeaponSkill = 25 +statline[0];
+        BallisticSkill = 25 +statline[1];
+        Strength = 25 + statline[2];
+        Toughness = 25 + statline[3];
+        Agility = 25 + statline[4];
+        Intelligence = 25 + statline[5];
+        Perception = 25 + statline[6];
+        Willpower = 25 + statline[7];
+        Fellowship = 25 +statline[8];
+        
+    }
     public void printStats()
     {
         for (Map.Entry<String,Integer> entry : stats.entrySet()) 
@@ -98,6 +125,17 @@ public class Charecter {
             default:
                 break;
         }
+    }
+    public void modStats()
+    {
+        statline = World.statChanges(statline);
+        statline = birthRight.statChanges(statline);
+        statline = lure.statChanges(statline);
+        statline = trial.statChanges(statline);
+        statline = motivation.statChanges(statline);
+        statline = career.statChanges(statline);
+        refreshStatline();
+        mapStats();
     }
     
     public int getBonus(int stat)
