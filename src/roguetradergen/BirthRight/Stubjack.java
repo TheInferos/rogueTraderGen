@@ -17,8 +17,15 @@ public class Stubjack extends BirthRight {
     }
         public int[] statChanges(int[] stats) //choice of stats[0] or stats[1] pg 26 pdf
     {
-        stats[0]+=5;
-        stats[1]+=5;
+        int option = roguetradergen.RogueTraderGen.rollDie(2);
+        if (option == 1)
+        {
+            stats[0]+=5;
+        }
+        else
+        {
+            stats[1]+=5;
+        }
         stats[8]-=5;
         return stats;
     }

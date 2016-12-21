@@ -17,8 +17,15 @@ public class Scavenger extends BirthRight {
     }
         public int[] statChanges(int[] stats) // choice of the two pg 25 pdf
     {
-        stats[4]+=3;
-        stats[7]+=3;
+        int option = roguetradergen.RogueTraderGen.rollDie(2);
+        if (option == 1)
+        {
+            stats[4]+=3;
+        }
+        else
+        {
+            stats[7]+=3;
+        }
         return stats;
     }
     

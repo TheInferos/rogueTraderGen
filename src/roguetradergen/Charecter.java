@@ -25,6 +25,9 @@ public class Charecter {
     public int Wounds;
     public int InsanityPoints;
     public int CorruptionPoints;
+    public roguetradergen.Talents.Talent[] talents;
+    public roguetradergen.Skills.Skills[] skills;
+    public roguetradergen.Features.Features featurs;
     public roguetradergen.worlds.World World;
     public roguetradergen.BirthRight.BirthRight birthRight;
     public roguetradergen.LureOfTheVoid.LureOfTheVoid lure;
@@ -37,7 +40,9 @@ public class Charecter {
             roguetradergen.LureOfTheVoid.LureOfTheVoid lure, roguetradergen.TrailsAndTravails.TrailsAndTravails trial, roguetradergen.Motivation.Motivation motivation,
             roguetradergen.Career.Career career)
     {
+        stats = new HashMap<String, Integer>();
         this.statline = statline;
+        ;
         setStatline();
         World = homeWorld;
         this.birthRight = birthRight;
@@ -46,11 +51,11 @@ public class Charecter {
         this.motivation = motivation;
         this.career = career;
         modStats();
-        stats = new HashMap<String, Integer>();
-        mapStats();
+        
+        mapStats(stats);
 
     }
-    public void mapStats()
+    public void mapStats(Map<String, Integer> stats)
     {
         stats.put("WS", WeaponSkill);
         stats.put("BS", BallisticSkill);
@@ -86,6 +91,7 @@ public class Charecter {
         Perception = 25 + statline[6];
         Willpower = 25 + statline[7];
         Fellowship = 25 +statline[8];
+        
         
     }
     public void printStats()
@@ -135,11 +141,17 @@ public class Charecter {
         statline = motivation.statChanges(statline);
         statline = career.statChanges(statline);
         refreshStatline();
-        mapStats();
+        mapStats(stats);
     }
     
     public int getBonus(int stat)
     {
         return stat/10;
     }
+    
+     public String getOrginPath()
+     {
+         return "Home World is: " + World.getClass().getSimpleName()+" Birthright is: "+ birthRight.getClass().getSimpleName() + " Lure to the void is: " + lure.getClass().getSimpleName() + " Trial and trevial: " + trial.getClass().getSimpleName()
+                 + " their motivation was: " + motivation.getClass().getSimpleName() + " now they've ended up as a " + career.getClass().getSimpleName();
+     }
 }

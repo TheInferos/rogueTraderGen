@@ -17,9 +17,15 @@ public class Savant extends BirthRight{
     }
         public int[] statChanges(int[] stats) //choice of sats[3] and stats[5] pg26 pdf
     {
+        int option = roguetradergen.RogueTraderGen.rollDie(2);
+        if (option == 1)
+        {
+            stats[5]+=3;
+        }
+        else{
+            stats[8]+=3;
+        }
         stats[3]-=3;
-        stats[5]+=3;
-        stats[8]+=3;
         return stats;
     }
     
