@@ -13,6 +13,7 @@ public class PressGanged extends TrailsAndTravails{
     public PressGanged()
     {
         super();
+        place = 2;
     }
     
     public int[] statChanges(int[] stats)

@@ -12,7 +12,8 @@ package roguetradergen.Career;
 public class Navigator extends Career {
     public Navigator()
     {
-        
+        super();
+        place = 6;
     }
     
     public  int[] statChanges(int[] stats)

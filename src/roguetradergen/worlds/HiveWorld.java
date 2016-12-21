@@ -13,6 +13,7 @@ public class HiveWorld extends World{
     public HiveWorld()
     {
         super();
+        place = 4;
     }
     
     public  int [] statChanges(int [] statline)

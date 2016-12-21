@@ -12,7 +12,8 @@ package roguetradergen.Career;
 public class Archmilitant extends Career {
     public Archmilitant()
     {
-        
+        super();
+        place = 1;
     }
     public  int[] statChanges(int[] stats)
     {

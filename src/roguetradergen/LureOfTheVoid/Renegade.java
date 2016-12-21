@@ -13,6 +13,7 @@ public class Renegade extends LureOfTheVoid {
     public Renegade()
     {
         super();
+        place = 3;
     }
     
     public int[] statChanges(int[] stats)

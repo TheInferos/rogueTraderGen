@@ -13,6 +13,7 @@ public class Scapegrace extends BirthRight {
         public Scapegrace()
     {
         super();
+        place = 2;
     }
         public int[] statChanges(int[] stats) //choice of the two pg26 pdf
     {

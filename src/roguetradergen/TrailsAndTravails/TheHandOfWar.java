@@ -13,6 +13,7 @@ public class TheHandOfWar extends TrailsAndTravails{
     public TheHandOfWar()
     {
         super();
+        place = 1;
     }
     
     public int[] statChanges(int[] stats)

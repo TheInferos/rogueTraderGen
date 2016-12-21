@@ -24,16 +24,9 @@ public class RogueTraderGen {
         //System.out.println(test.getClass().getSimpleName());
         //Charecter steve = generateCharecter();
         //steve.printStats();
-        int start = 4;
-        int goal = 2;
-        int steps = 10;
-        for (int j = 0; j<10; j++)
-        {
-            int direction = whichPath(start, goal, steps);
-            steps -= 1;
-            System.out.println("your startpoint is " + start + " movement " + direction + " endpoint is " + (start+direction) + " goal is " +goal );
-            start += direction;
-        }
+        roguetradergen.worlds.World world = new roguetradergen.worlds.NobleBorn();
+        roguetradergen.Career.Career career = new roguetradergen.Career.VoidMaster();
+        generatePathBr2Mot(world, career);
     }
     public static void produceUI()
     {
@@ -70,14 +63,24 @@ public class RogueTraderGen {
         return genChar;
     }
     
+    public static void generatePathBr2Mot(roguetradergen.worlds.World homeWorld, roguetradergen.Career.Career chosenCareer)
+    {
+        roguetradergen.BirthRight.BirthRight birthRight = homeWorld.whereNext(whichPath(homeWorld.getPlace(), chosenCareer.getPlace(), 5));
+        roguetradergen.LureOfTheVoid.LureOfTheVoid lure = birthRight.whereNext(whichPath(birthRight.getPlace(), chosenCareer.getPlace(), 4));
+        roguetradergen.TrailsAndTravails.TrailsAndTravails trial = lure.whereNext(whichPath(lure.getPlace(), chosenCareer.getPlace(), 3));
+        roguetradergen.Motivation.Motivation motivation = trial.whereNext(whichPath(trial.getPlace(), chosenCareer.getPlace(), 2));
+        
+        System.out.println("your startpoint is " + homeWorld.getClass().getSimpleName() + " Birthright " + birthRight.getClass().getSimpleName() + " Lure  " + lure.getClass().getSimpleName()
+                + " trial is " + trial.getClass().getSimpleName() + " motivation is " + motivation.getClass().getSimpleName() + " the career you wanted is " + chosenCareer.getClass().getSimpleName() );
+    }
+    
     public static int whichPath(int currentNumber, int goalNumber, int stepsLeft )
     {
         int position = 6;
         int distance = unsignIt((currentNumber-goalNumber));
         if (distance < (stepsLeft -1))
         {
-            position = rollDie(3) -2;
-            
+            position = rollDie(3) -2;           
         }
         else if (distance == stepsLeft)
         {
@@ -86,7 +89,7 @@ public class RogueTraderGen {
                 position = -1;
             }
             
-            else if(currentNumber-goalNumber > 0)
+            else if(currentNumber-goalNumber < 0)
             {
                 position = 1;
             }
@@ -94,22 +97,22 @@ public class RogueTraderGen {
         else if (distance == (stepsLeft -1))
             if(currentNumber-goalNumber > 0)
             {
+                
                 position = rollDie(2)-2;
             }
             
-            else if(currentNumber-goalNumber > 0)
+            else if(currentNumber-goalNumber < 0)
             {
                 position = rollDie(2)-1;
             }
-            else if ((currentNumber == goalNumber) && (goalNumber <= 2))
+            else if ((currentNumber == goalNumber) && (goalNumber <= 1))
             {
                 position = 0;
             }
             else 
             {
                 position = rollDie(3) -2;
-            }
-                
+            } 
         return position;
     }
     

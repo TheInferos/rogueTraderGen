@@ -13,6 +13,7 @@ public class NobleBorn extends World{
     public NobleBorn()
     {
         super();
+        place = 6;
     }
     
     public  int [] statChanges(int [] statline)

@@ -11,9 +11,10 @@ package roguetradergen.Career;
  */
 public class AstropathTranscendent   extends Career {
     public AstropathTranscendent()
-            {
-                
-            }
+    {
+        super();
+        place = 0;
+    }
     public  int[] statChanges(int[] stats)
     {
         return stats;

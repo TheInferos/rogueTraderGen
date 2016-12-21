@@ -10,6 +10,7 @@ package roguetradergen.Motivation;
  * @author Hex
  */
 public abstract class Motivation {
+    public int place;
     public Motivation()
     {
         
@@ -21,4 +22,9 @@ public abstract class Motivation {
     public abstract String[] talentList(String[] talents);
     
     public abstract roguetradergen.Career.Career whereNext(int movement);
+    
+    public int getPlace()
+    {
+        return place;
+    }
 }

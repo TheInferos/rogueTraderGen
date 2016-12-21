@@ -14,6 +14,7 @@ public class Fortune extends Motivation {
     {
         // fateppint +1
         super();
+        place = 2;
     }
     
     public int[] statChanges(int[] stats)

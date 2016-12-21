@@ -13,6 +13,7 @@ public class Pride extends Motivation {
     public Pride()
     {
         super();
+        place = 5;
     }
     
     public int[] statChanges(int[] stats)

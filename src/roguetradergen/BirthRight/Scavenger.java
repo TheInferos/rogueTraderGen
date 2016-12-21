@@ -13,6 +13,7 @@ public class Scavenger extends BirthRight {
         public Scavenger()
     {
         super();
+        place = 1;
     }
         public int[] statChanges(int[] stats) // choice of the two pg 25 pdf
     {

@@ -13,6 +13,7 @@ public class Endurance extends Motivation {
     public Endurance()
     {
         super();
+        place = 1;
     }
     
     public int[] statChanges(int[] stats)

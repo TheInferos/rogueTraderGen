@@ -13,6 +13,7 @@ public class VoidBorn extends World{
     public VoidBorn()
     {
         super();
+        place = 2;
     }
     
     public  int [] statChanges(int [] statline)

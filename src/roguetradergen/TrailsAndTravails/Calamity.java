@@ -13,6 +13,7 @@ public class Calamity extends TrailsAndTravails {
     public Calamity()
     {
         super();
+        place =3;
     }
     
     public int[] statChanges(int[] stats)

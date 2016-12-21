@@ -12,7 +12,8 @@ package roguetradergen.Career;
 public class Explorator extends Career  {
     public Explorator()
     {
-        
+        super();
+        place = 3;
     }
             
     

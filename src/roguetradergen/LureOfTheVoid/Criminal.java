@@ -13,6 +13,7 @@ public class Criminal extends LureOfTheVoid{
     public Criminal()
     {
         super();
+        place = 2;
     }
     
     public int[] statChanges(int[] stats)

@@ -13,6 +13,7 @@ public class HighVendetta extends TrailsAndTravails {
     public HighVendetta()
     {
         super();
+        place = 6;
     }
     
     public int[] statChanges(int[] stats)

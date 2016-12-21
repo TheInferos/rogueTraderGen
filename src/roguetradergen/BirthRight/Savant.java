@@ -13,6 +13,7 @@ public class Savant extends BirthRight{
         public Savant()
     {
         super();
+        place = 5;
     }
         public int[] statChanges(int[] stats) //choice of sats[3] and stats[5] pg26 pdf
     {

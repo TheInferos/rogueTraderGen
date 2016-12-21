@@ -12,7 +12,8 @@ package roguetradergen.Career;
 public class VoidMaster extends Career {
     public VoidMaster()
     {
-        
+        super();
+        place = 2;
     }
     
     public  int[] statChanges(int[] stats)

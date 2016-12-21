@@ -12,7 +12,8 @@ package roguetradergen.Career;
 public class Seneschal extends Career {
     public Seneschal()
     {
-                
+        super();
+        place = 5;
     }
     
     public  int[] statChanges(int[] stats)

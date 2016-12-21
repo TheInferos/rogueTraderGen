@@ -13,6 +13,7 @@ public class Vengance extends Motivation {
     public Vengance()
     {
         super();
+        place = 3;
     }
     
     public int[] statChanges(int[] stats)

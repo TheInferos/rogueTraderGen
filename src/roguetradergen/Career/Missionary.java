@@ -12,7 +12,8 @@ package roguetradergen.Career;
 public class Missionary extends Career {
     public Missionary()
     {
-        
+        super();
+        place = 4;
     }
     public  int[] statChanges(int[] stats)
     {

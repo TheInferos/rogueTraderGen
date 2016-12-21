@@ -10,9 +10,12 @@ package roguetradergen.TrailsAndTravails;
  * @author Hex
  */
 public abstract class TrailsAndTravails {
+    
+    public int place;
+    
     public TrailsAndTravails()
     {
-        
+    
     }
     public abstract int [] statChanges(int [] statline);
     
@@ -21,4 +24,9 @@ public abstract class TrailsAndTravails {
     public abstract String[] talentList(String[] talents);
     
     public abstract roguetradergen.Motivation.Motivation whereNext(int movement);
+    
+    public int getPlace()
+    {
+        return place;
+    }
 }

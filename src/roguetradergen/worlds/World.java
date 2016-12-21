@@ -11,6 +11,8 @@ package roguetradergen.worlds;
  */
 public abstract class World {
     
+    public int place;
+    
     public World()
     {
     
@@ -21,5 +23,10 @@ public abstract class World {
     
     public abstract String[] addTalents(String[] talents);
     
-     public abstract roguetradergen.BirthRight.BirthRight whereNext(int movement);
+    public abstract roguetradergen.BirthRight.BirthRight whereNext(int movement);
+    
+    public int getPlace()
+    {
+        return place;
+    }
 }

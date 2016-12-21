@@ -13,6 +13,7 @@ public class DutyBound extends LureOfTheVoid{
     public DutyBound()
     {
         super();
+        place = 4;
     }
     
     public int[] statChanges(int[] stats)

@@ -13,6 +13,7 @@ public class ChildOfTheCreed extends BirthRight {
     public ChildOfTheCreed()
     {
         super();
+        place = 4;
     }
     
     public int[] statChanges(int[] stats) //Choice between stats[7] and stats[8] pg26 pdf

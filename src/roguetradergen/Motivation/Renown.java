@@ -13,6 +13,7 @@ public class Renown extends Motivation {
     public Renown()
     {
         super();
+        place = 4;
     }
     
     public int[] statChanges(int[] stats)

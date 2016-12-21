@@ -13,6 +13,7 @@ public class Prestige extends Motivation{
     public Prestige()
     {
         super();
+        place = 6;
     }
     
     public int[] statChanges(int[] stats)

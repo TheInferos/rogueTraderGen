@@ -13,6 +13,7 @@ public class Zealot extends LureOfTheVoid {
     public Zealot()
     {
         super();
+        place = 5;
     }
     
     public int[] statChanges(int[] stats)

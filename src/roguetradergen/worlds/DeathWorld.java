@@ -14,6 +14,7 @@ public class DeathWorld extends World{
     public DeathWorld()
     {
         super();
+        place = 1;
     }
     
     @Override

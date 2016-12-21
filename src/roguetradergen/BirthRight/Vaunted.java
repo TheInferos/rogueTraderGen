@@ -13,6 +13,7 @@ public class Vaunted extends BirthRight {
         public Vaunted()
     {
         super();
+        place = 6;
     }
         public int[] statChanges(int[] stats) //choice of stats[4] or stats[8] pg 26 pdf
     {

@@ -13,6 +13,7 @@ public class Stubjack extends BirthRight {
         public Stubjack()
     {
         super();
+        place = 3;
     }
         public int[] statChanges(int[] stats) //choice of stats[0] or stats[1] pg 26 pdf
     {

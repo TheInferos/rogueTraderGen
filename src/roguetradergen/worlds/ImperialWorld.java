@@ -13,6 +13,7 @@ public class ImperialWorld extends World {
     public ImperialWorld()
     {
         super();
+        place = 5;
     }
     
     public  int [] statChanges(int [] statline)

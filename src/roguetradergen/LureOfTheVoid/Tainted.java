@@ -14,6 +14,7 @@ public class Tainted extends LureOfTheVoid {
     public Tainted()
     {
         super();
+        place = 1;
     }
     
     public int[] statChanges(int[] stats)

@@ -13,6 +13,7 @@ public class DarkVoyage extends TrailsAndTravails {
     public DarkVoyage()
     {
         super();
+        place = 5;
     }
     
     public int[] statChanges(int[] stats)

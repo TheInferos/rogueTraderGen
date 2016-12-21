@@ -10,6 +10,7 @@ package roguetradergen.Career;
  * @author Hex
  */
 public abstract class Career {
+    public int place;
     public Career()
     {
         
@@ -19,4 +20,9 @@ public abstract class Career {
     public abstract String[] skillList(String[] skills);
     
     public abstract String[] talentList(String[] talents);
+    
+    public int getPlace()
+    {
+        return place;
+    }
 }

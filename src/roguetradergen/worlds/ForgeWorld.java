@@ -13,6 +13,7 @@ public class ForgeWorld extends World {
         public ForgeWorld ()
     {
         super();
+        place = 3;
     }
     
     public  int [] statChanges(int [] statline)

@@ -13,6 +13,7 @@ public class ShipLorn extends TrailsAndTravails {
     public ShipLorn()
     {
         super();
+        place = 4;
     }
     
     public int[] statChanges(int[] stats)

@@ -13,6 +13,7 @@ public class ChosenByDestiny extends LureOfTheVoid {
     public ChosenByDestiny()
     {
         super();
+        place = 6;
     }
     
     public int[] statChanges(int[] stats)

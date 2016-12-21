@@ -10,6 +10,7 @@ package roguetradergen.BirthRight;
  * @author Hex
  */
 public abstract class BirthRight {
+    public int place;
     public BirthRight()
     {
         
@@ -21,4 +22,9 @@ public abstract class BirthRight {
     public abstract String[] talentList(String[] talents);
     
     public abstract roguetradergen.LureOfTheVoid.LureOfTheVoid whereNext(int movement);
+    
+    public int getPlace()
+    {
+        return place;
+    }
 }
