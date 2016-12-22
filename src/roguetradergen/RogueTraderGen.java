@@ -30,8 +30,9 @@ public class RogueTraderGen {
         genChar.modStats();
         genChar.printStats();
         */
+        
         Charecter genChar = generateCharacterAll();
-        System.out.print(genChar.getOrginPath());
+        System.out.print(genChar.getOrginPath()) ;
         genChar.printStats();
     }
     public static void produceUI()
@@ -154,7 +155,7 @@ public class RogueTraderGen {
             
             else if(currentNumber-goalNumber < 0)
             {
-                position = 1;
+                position = 1; 
             }
         }
         else if (distance == (stepsLeft -1))
@@ -186,11 +187,13 @@ public class RogueTraderGen {
     
     public static int [] generateCStats()
     {
-        int[] statline = new int[9];
+        int[] statline = new int[13];
         for(int noStat =0; noStat <9; noStat++)
         {
             statline[noStat] = rollSDie(2, 10);
         }
+        statline[9] = rollDie(5);
+        statline[10] = rollDie(10); 
         return  statline;
     }
 }

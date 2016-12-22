@@ -7,6 +7,7 @@ package roguetradergen;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
 /**
  *
  * @author Hex
@@ -23,11 +24,12 @@ public class Charecter {
     public int Willpower;
     public int Fellowship;
     public int Wounds;
+    public int fatePoints;
     public int InsanityPoints;
     public int CorruptionPoints;
-    public roguetradergen.Talents.Talent[] talents;
-    public roguetradergen.Skills.Skills[] skills;
-    public roguetradergen.Features.Features featurs;
+    public ArrayList<roguetradergen.Talents.Talent> talents;
+    public ArrayList<roguetradergen.Skills.Skills> skills;
+    public ArrayList<roguetradergen.Features.Features> features;
     public roguetradergen.worlds.World World;
     public roguetradergen.BirthRight.BirthRight birthRight;
     public roguetradergen.LureOfTheVoid.LureOfTheVoid lure;
@@ -41,8 +43,12 @@ public class Charecter {
             roguetradergen.Career.Career career)
     {
         stats = new HashMap<String, Integer>();
+        talents = new ArrayList<roguetradergen.Talents.Talent>();
+        skills = new ArrayList<roguetradergen.Skills.Skills>();
+        features = new ArrayList<roguetradergen.Features.Features>();
         this.statline = statline;
-        ;
+        
+        
         setStatline();
         World = homeWorld;
         this.birthRight = birthRight;
@@ -55,6 +61,7 @@ public class Charecter {
         mapStats(stats);
 
     }
+    //potentially unneeded
     public void mapStats(Map<String, Integer> stats)
     {
         stats.put("WS", WeaponSkill);
@@ -78,22 +85,12 @@ public class Charecter {
         Perception = 25 + statline[6];
         Willpower = 25 + statline[7];
         Fellowship = 25 +statline[8];
+        Wounds = statline[9];
+        fatePoints = statline[10];
+        InsanityPoints = statline[11];
+        CorruptionPoints = statline[12];
     }
-    
-    public void refreshStatline()
-    {
-        WeaponSkill = 25 +statline[0];
-        BallisticSkill = 25 +statline[1];
-        Strength = 25 + statline[2];
-        Toughness = 25 + statline[3];
-        Agility = 25 + statline[4];
-        Intelligence = 25 + statline[5];
-        Perception = 25 + statline[6];
-        Willpower = 25 + statline[7];
-        Fellowship = 25 +statline[8];
-        
-        
-    }
+
     public void printStats()
     {
         for (Map.Entry<String,Integer> entry : stats.entrySet()) 
@@ -140,7 +137,7 @@ public class Charecter {
         statline = trial.statChanges(statline);
         statline = motivation.statChanges(statline);
         statline = career.statChanges(statline);
-        refreshStatline();
+        setStatline();
         mapStats(stats);
     }
     
@@ -153,5 +150,28 @@ public class Charecter {
      {
          return "Home World is: " + World.getClass().getSimpleName()+" Birthright is: "+ birthRight.getClass().getSimpleName() + " Lure to the void is: " + lure.getClass().getSimpleName() + " Trial and trevial: " + trial.getClass().getSimpleName()
                  + " their motivation was: " + motivation.getClass().getSimpleName() + " now they've ended up as a " + career.getClass().getSimpleName();
+     }
+     public void addTalents(ArrayList<roguetradergen.Talents.Talent> nTalents)
+     {
+        for (roguetradergen.Talents.Talent newTalents: nTalents)
+        {
+            talents.add(newTalents);
+        }
+     }
+     
+     public void addSkills(ArrayList<roguetradergen.Skills.Skills> nSkills)
+     {
+         for(roguetradergen.Skills.Skills newSkills: nSkills)
+         {
+             skills.add(newSkills);
+         }
+     }
+     
+     public void addFeatures(ArrayList<roguetradergen.Features.Features> nFeatures)
+     {
+         for (roguetradergen.Features.Features newFeatures: nFeatures)
+         {
+             features.add(newFeatures);
+         }
      }
 }
