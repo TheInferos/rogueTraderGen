@@ -5,6 +5,10 @@
  */
 package roguetradergen.worlds;
 
+import roguetradergen.Features.*;
+import roguetradergen.Skills.*;
+import roguetradergen.Talents.*;
+
 /**
  *
  * @author Hex
@@ -17,16 +21,25 @@ public abstract class World {
     {
     
     }
-    public abstract int [] statChanges(int [] statline);
+    public abstract int[] statChanges(int [] statline);
     
-    public abstract String[] addSkills(String[] skills);
+    public abstract Skills[] addSkills();
     
-    public abstract String[] addTalents(String[] talents);
+    public abstract Talent[] addTalents();
+    
+    public abstract Features[] addFeatures();
+    
     
     public abstract roguetradergen.BirthRight.BirthRight whereNext(int movement);
+    
+    public abstract int setFP(int [] statline);
     
     public int getPlace()
     {
         return place;
+    }
+    public int getBonus(int stat)
+    {
+        return stat/10;
     }
 }

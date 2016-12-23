@@ -5,6 +5,10 @@
  */
 package roguetradergen.worlds;
 
+import roguetradergen.Features.*;
+import roguetradergen.Skills.*;
+import roguetradergen.Talents.*;
+
 /**
  *
  * @author Hex
@@ -18,25 +22,51 @@ public class DeathWorld extends World{
     }
     
     @Override
-    public int [] statChanges(int[] statline)
+    public int[] statChanges(int[] statline)
     {
         statline[0] += 5;
         statline[3] += 5;
         statline[7] -= 5;
         statline[8] -= 5;
+        statline[9] += 2 +2*getBonus(statline[3]);
+        
         return statline;
     }
     
     @Override
-    public  String[] addSkills(String[] skills)
+    public  roguetradergen.Skills.Skills[] addSkills()
     {
+        Skills[]  skills = new roguetradergen.Skills.Skills[8];
+        skills[0] = new Survival();
         return skills;
     }
     
     @Override
-    public  String[] addTalents(String[] Talents)
+    public  Talent[] addTalents()
     {
-        return Talents;
+        Talent[]  talents = new Talent[8];
+        return talents;
+    }
+    
+    @Override
+    public Features[] addFeatures()
+    {
+        Features[]  features = new Features[8];
+        return features;
+    }
+    
+    @Override
+    public int setFP(int [] statline)
+    {
+        int roll = roguetradergen.RogueTraderGen.rollDie(10);
+        if (roll <= 5)
+        {
+            return 2;
+        }
+        else
+        {
+            return 3;
+        }
     }
     
     public roguetradergen.BirthRight.BirthRight whereNext(int movement)
@@ -54,4 +84,6 @@ public class DeathWorld extends World{
             return new roguetradergen.BirthRight.Scapegrace();
         }
     }
+
+    
 }

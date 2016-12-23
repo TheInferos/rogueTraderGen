@@ -9,21 +9,11 @@ package roguetradergen.Talents;
  *
  * @author Hex
  */
-public abstract class Talent {
-    
-    public String name;
-    public String description;
-    
-    public Talent()
+public abstract class Resistance extends Talent{
+    public String typeOfResistance;
+    public Resistance()
     {
-    }
-    public String getName()
-    {
-        return name;
+        super();
     }
     
-    public String getDescription()
-    {
-        return description;
-    }
 }

@@ -5,6 +5,9 @@
  */
 package roguetradergen.worlds;
 
+import roguetradergen.Features.*;
+import roguetradergen.Skills.*;
+import roguetradergen.Talents.*;
 /**
  *
  * @author Hex
@@ -49,4 +52,25 @@ public class ForgeWorld extends World {
             return new roguetradergen.BirthRight.Stubjack();
         }
     }
-}
+    
+    @Override
+    public int setFP(int [] statline)
+    {
+        int roll = roguetradergen.RogueTraderGen.rollDie(10);
+        if (roll <= 5)
+        {
+            return 2;
+        }
+        else
+        {
+            return 3;
+        }
+    }
+
+    @Override
+    public Features[] addFeatures()
+    {
+        Features[]  features = new Features[8];
+        return features;
+    }
+    }

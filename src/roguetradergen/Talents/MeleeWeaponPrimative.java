@@ -9,21 +9,13 @@ package roguetradergen.Talents;
  *
  * @author Hex
  */
-public abstract class Talent {
+public class MeleeWeaponPrimative extends WeaponTraining {
     
-    public String name;
-    public String description;
-    
-    public Talent()
+    public MeleeWeaponPrimative()
     {
-    }
-    public String getName()
-    {
-        return name;
+        super();
+        ranged = false;
+        group  = "Primative";
     }
     
-    public String getDescription()
-    {
-        return description;
-    }
 }

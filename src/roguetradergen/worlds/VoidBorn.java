@@ -5,11 +5,15 @@
  */
 package roguetradergen.worlds;
 
+import roguetradergen.Features.*;
+import roguetradergen.Skills.*;
+import roguetradergen.Talents.*;
+
 /**
  *
  * @author Hex
  */
-public class VoidBorn extends World{
+public abstract class VoidBorn extends World{
     public VoidBorn()
     {
         super();
@@ -48,5 +52,21 @@ public class VoidBorn extends World{
             return new roguetradergen.BirthRight.Scapegrace();
         }
     }
+      
+    @Override
+    public int setFP(int [] statline)
+    {
+        int roll = roguetradergen.RogueTraderGen.rollDie(10);
+        if (roll <= 5)
+        {
+            return 2;
+        }
+        else
+        {
+            return 3;
+        }
+    }
+
+    public abstract Features[] addFeatures();
 }
 

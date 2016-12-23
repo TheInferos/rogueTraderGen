@@ -9,21 +9,13 @@ package roguetradergen.Talents;
  *
  * @author Hex
  */
-public abstract class Talent {
+public abstract class WeaponTraining extends Talent {
+    public boolean ranged;
+    public String group;
     
-    public String name;
-    public String description;
-    
-    public Talent()
+    public WeaponTraining()
     {
-    }
-    public String getName()
-    {
-        return name;
+        super();
     }
     
-    public String getDescription()
-    {
-        return description;
-    }
 }

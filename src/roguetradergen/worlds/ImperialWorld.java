@@ -5,11 +5,15 @@
  */
 package roguetradergen.worlds;
 
+
+import roguetradergen.Features.*;
+import roguetradergen.Skills.*;
+import roguetradergen.Talents.*;
 /**
  *
  * @author Hex
  */
-public class ImperialWorld extends World {
+public abstract class ImperialWorld extends World {
     public ImperialWorld()
     {
         super();
@@ -48,4 +52,20 @@ public class ImperialWorld extends World {
             return new roguetradergen.BirthRight.Savant();
         }
     }
+    
+    @Override
+    public int setFP(int [] statline)
+    {
+        int roll = roguetradergen.RogueTraderGen.rollDie(10);
+        if (roll <= 5)
+        {
+            return 2;
+        }
+        else
+        {
+            return 3;
+        }
+    }
+
+    public abstract Features[] addFeatures();
 }
