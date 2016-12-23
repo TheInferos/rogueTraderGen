@@ -26,7 +26,7 @@ public class Awareness extends Skills {
 "noticing environmental factors is a Standard Test. This use\n" +
 "includes perceiving trace scents, motion, or similar things.\n" +
 "Skill Use: Free Action made in reaction to something.";
-        simple = true;
+        basic = true;
         stat = "Per";
         use = "Exploration";
     }

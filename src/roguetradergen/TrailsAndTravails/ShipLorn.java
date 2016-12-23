@@ -40,7 +40,7 @@ public class ShipLorn extends TrailsAndTravails {
     {
         if (movement == -1)
         {
-            return new roguetradergen.Motivation.Vengance();
+            return new roguetradergen.Motivation.Vengeance();
         }
         else if(movement == 1)
             {

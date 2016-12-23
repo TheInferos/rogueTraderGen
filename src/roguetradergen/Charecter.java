@@ -8,6 +8,15 @@ package roguetradergen;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
+import roguetradergen.Worlds.*;
+import roguetradergen.BirthRight.*;
+import roguetradergen.LureOfTheVoid.*;
+import roguetradergen.TrailsAndTravails.*;
+import roguetradergen.Motivation.*;
+import roguetradergen.Career.*;
+import roguetradergen.Features.*;
+import roguetradergen.Skills.*;
+import roguetradergen.Talents.*;
 /**
  *
  * @author Hex
@@ -27,25 +36,24 @@ public class Charecter {
     public int fatePoints;
     public int InsanityPoints;
     public int CorruptionPoints;
-    public ArrayList<roguetradergen.Talents.Talent> talents;
-    public ArrayList<roguetradergen.Skills.Skills> skills;
-    public ArrayList<roguetradergen.Features.Features> features;
-    public roguetradergen.worlds.World World;
-    public roguetradergen.BirthRight.BirthRight birthRight;
-    public roguetradergen.LureOfTheVoid.LureOfTheVoid lure;
-    public roguetradergen.TrailsAndTravails.TrailsAndTravails trial;
-    public roguetradergen.Motivation.Motivation motivation;
-    public roguetradergen.Career.Career career;
+    public ArrayList<Talent> talents;
+    public ArrayList<Skills> skills;
+    public ArrayList<Features> features;
+    public World World;
+    public BirthRight birthRight;
+    public LureOfTheVoid lure;
+    public TrailsAndTravails trial;
+    public Motivation motivation;
+    public Career career;
     public Map<String, Integer> stats;
     
-    public Charecter(int[] statline, roguetradergen.worlds.World homeWorld, roguetradergen.BirthRight.BirthRight birthRight, 
-            roguetradergen.LureOfTheVoid.LureOfTheVoid lure, roguetradergen.TrailsAndTravails.TrailsAndTravails trial, roguetradergen.Motivation.Motivation motivation,
-            roguetradergen.Career.Career career)
+    public Charecter(int[] statline, World homeWorld, BirthRight birthRight, LureOfTheVoid lure, TrailsAndTravails trial,
+                   Motivation motivation, Career career)
     {
         stats = new HashMap<String, Integer>();
-        talents = new ArrayList<roguetradergen.Talents.Talent>();
-        skills = new ArrayList<roguetradergen.Skills.Skills>();
-        features = new ArrayList<roguetradergen.Features.Features>();
+        talents = new ArrayList<Talent>();
+        skills = new ArrayList<Skills>();
+        features = new ArrayList<Features>();
         this.statline = statline;
         
         
@@ -151,25 +159,25 @@ public class Charecter {
          return "Home World is: " + World.getClass().getSimpleName()+" Birthright is: "+ birthRight.getClass().getSimpleName() + " Lure to the void is: " + lure.getClass().getSimpleName() + " Trial and trevial: " + trial.getClass().getSimpleName()
                  + " their motivation was: " + motivation.getClass().getSimpleName() + " now they've ended up as a " + career.getClass().getSimpleName();
      }
-     public void addTalents(ArrayList<roguetradergen.Talents.Talent> nTalents)
+     public void addTalents(ArrayList<Talent> nTalents)
      {
-        for (roguetradergen.Talents.Talent newTalents: nTalents)
+        for (Talent newTalents: nTalents)
         {
             talents.add(newTalents);
         }
      }
      
-     public void addSkills(ArrayList<roguetradergen.Skills.Skills> nSkills)
+     public void addSkills(ArrayList<Skills> nSkills)
      {
-         for(roguetradergen.Skills.Skills newSkills: nSkills)
+         for(Skills newSkills: nSkills)
          {
              skills.add(newSkills);
          }
      }
      
-     public void addFeatures(ArrayList<roguetradergen.Features.Features> nFeatures)
+     public void addFeatures(ArrayList<Features> nFeatures)
      {
-         for (roguetradergen.Features.Features newFeatures: nFeatures)
+         for (Features newFeatures: nFeatures)
          {
              features.add(newFeatures);
          }

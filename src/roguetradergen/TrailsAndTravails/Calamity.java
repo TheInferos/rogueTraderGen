@@ -39,7 +39,7 @@ public class Calamity extends TrailsAndTravails {
         }
         else if(movement == 1)
             {
-                return new roguetradergen.Motivation.Vengance();
+                return new roguetradergen.Motivation.Vengeance();
             }        
         else 
         {

@@ -9,8 +9,8 @@ package roguetradergen.Motivation;
  *
  * @author Hex
  */
-public class Vengance extends Motivation {
-    public Vengance()
+public class Vengeance extends Motivation {
+    public Vengeance()
     {
         super();
         place = 3;

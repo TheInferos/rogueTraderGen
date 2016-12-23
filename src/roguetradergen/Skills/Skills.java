@@ -13,7 +13,7 @@ public class Skills {
         
     public String name;
     public String description;
-    public boolean simple;
+    public boolean basic;
     public String stat;
     public String use;
     
@@ -31,9 +31,9 @@ public class Skills {
         return description;
     }
     
-    public boolean isItSimple()
+    public boolean isItBasic()
     {
-        return simple;
+        return basic;
     }
     public String getStat()
     {
@@ -43,5 +43,10 @@ public class Skills {
     public String use()
     {
         return use;
+    }
+    
+    public void setSimple(boolean simple)
+    {
+        basic = simple;
     }
 }
