@@ -9,14 +9,12 @@ package roguetradergen.Features;
  *
  * @author Hex
  */
-public class Features {
+public abstract class Features {
     public String name;
     public String description;
     
-    public Features(String fName, String fDescription)
+    public Features()
     {
-        name = fName;
-        description = fDescription;
     }
     public String getName()
     {

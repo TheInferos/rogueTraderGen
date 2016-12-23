@@ -14,6 +14,12 @@ public abstract class Resistance extends Talent{
     public Resistance()
     {
         super();
+        description = "The Explorer’s background, experience, training, exposure,\n" +
+"or plain stubbornness has inured him to a particular type of\n" +
+"hardship. Each time the Explorer selects this Talent, choose\n" +
+"one group. He gains a +10 bonus when making Tests to resist\n" +
+"the effects of this group. The GM may wish to approve certain\n" +
+"choices or have them justified by the character’s past.";
     }
     
 }

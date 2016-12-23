@@ -36,7 +36,7 @@ public class DeathWorld extends World{
     @Override
     public  roguetradergen.Skills.Skills[] addSkills()
     {
-        Skills[]  skills = new roguetradergen.Skills.Skills[8];
+        Skills[]  skills = new roguetradergen.Skills.Skills[1];
         skills[0] = new Survival();
         return skills;
     }
@@ -44,14 +44,25 @@ public class DeathWorld extends World{
     @Override
     public  Talent[] addTalents()
     {
-        Talent[]  talents = new Talent[8];
+        Talent[]  talents = new Talent[1];
+        int roll =roguetradergen.RogueTraderGen.rollDie(2);
+        if ( roll == 1)
+        {
+            talents[1] = new Jaded();
+        }
+        else
+        {
+            talents[1] = new ResisitancePoison();
+        }
         return talents;
     }
     
     @Override
     public Features[] addFeatures()
     {
-        Features[]  features = new Features[8];
+        Features[]  features = new Features[2];
+        features[0] = new DeathWorldParanoid();
+        features[1] = new DeathWorldSurvivor();
         return features;
     }
     
