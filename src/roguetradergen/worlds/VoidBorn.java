@@ -13,7 +13,7 @@ import roguetradergen.Talents.*;
  *
  * @author Hex
  */
-public abstract class VoidBorn extends World{
+public class VoidBorn extends World{
     public VoidBorn()
     {
         super();
@@ -27,14 +27,26 @@ public abstract class VoidBorn extends World{
         return statline;
     }
     
-    public  String[] addSkills(String[] skills)
+@Override
+    public  roguetradergen.Skills.Skills[] addSkills()
     {
+        Skills[]  skills = new roguetradergen.Skills.Skills[8];
+        skills[0] = new Survival();
         return skills;
     }
     
-    public  String[] addTalents(String[] talents)
+    @Override
+    public  Talent[] addTalents()
     {
+        Talent[]  talents = new Talent[8];
         return talents;
+    }
+    
+    @Override
+    public Features[] addFeatures()
+    {
+        Features[]  features = new Features[8];
+        return features;
     }
       public roguetradergen.BirthRight.BirthRight whereNext(int movement)
     {
@@ -67,6 +79,5 @@ public abstract class VoidBorn extends World{
         }
     }
 
-    public abstract Features[] addFeatures();
 }
 

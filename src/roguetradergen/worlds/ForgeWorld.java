@@ -26,14 +26,26 @@ public class ForgeWorld extends World {
         return statline;
     }
     
-    public  String[] addSkills(String[] skills)
+    @Override
+    public  roguetradergen.Skills.Skills[] addSkills()
     {
+        Skills[]  skills = new roguetradergen.Skills.Skills[8];
+        skills[0] = new Survival();
         return skills;
     }
     
-    public  String[] addTalents(String[] talents)
+    @Override
+    public  Talent[] addTalents()
     {
+        Talent[]  talents = new Talent[8];
         return talents;
+    }
+    
+    @Override
+    public Features[] addFeatures()
+    {
+        Features[]  features = new Features[8];
+        return features;
     }
     
     public roguetradergen.BirthRight.BirthRight whereNext(int movement)
@@ -67,10 +79,4 @@ public class ForgeWorld extends World {
         }
     }
 
-    @Override
-    public Features[] addFeatures()
-    {
-        Features[]  features = new Features[8];
-        return features;
-    }
     }
